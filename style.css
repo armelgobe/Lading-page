@@ -1,6 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap');
 
-body{
+/*Procédure de déclaration de variable*/
+:root{
+    --violet:#d33bfd
+}
+
+
+body{ /*Toutes modifications apportées dans les accolades Body s'applique à tous les éléments Body de maniere uniforme*/
+    margin: 0; /*Retirer toute les marges extérieures de l'élément body */
+    font-family: 'Montserrat', sans-serif; /*Application de la fonte Montserrat sans serif*/
+    color: white; /*Appliquer du blanc à la couleur des textes*/
+}
+
+header{ 
+    background: linear-gradient(#13181d, #20212e, #341b47); /*Appliquer un background dégrader au notre header*/
+}
+
+header nav{ /*Toutes modifications au sein de l'accolade nav s'applique aux items de celle-ci*/
+    padding: 30px 5% 0 5%; /*Ajouter une marge à l'extérieur de nav : 30 pixel en haut, 5% à droite, en dessous 0 et à gauche 5%*/
+    display: flex; /*Pour spécifier que notre container nav est un flex */
+    flex-wrap: wrap; /*Pour spécifier que notre nos éléments vont à la ligne quand il n'y a plus de place. IMPORTANT EN VERSION MOBILE*/
+
+    /*Le container nav comporte deux items  à savoir : <h1> et <div class right>*/
+    /*Pour ajouter de l'espace entre les items de nav on utilise : */
+    justify-content: space-between;
+    align-items:center; /*Permet de d'aligner centriquement nos items*/
+
+}
+
+header nav h1{
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: var(--violet);
+}
+header nav .right{
+    display: flex; /*Pour utiliser les flexbox afin d'aligner nos élément dans l'item div*/
+    align-items: center ;
+    
+}
+header nav .right p { /*s'occuper des paragraphes de notre class div right*/
+    margin: 0 15px 0 0;
+    color: #ccc;
+    cursor:pointer;
+
+}
+header nav .right p:hover{ /*Spécifier que l'on va utiliser la class hover sur la class div . right p*/
+    color:white;
+
+}
+header nav .right button{
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: inherit; /*Inherit veut dire appliquer la couleur de base qui est definit dans le body à savoir le blanc*/
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+header nav .right button:hover{
+    color: inherit;
+    background-color: var(--violet);
+
 }
