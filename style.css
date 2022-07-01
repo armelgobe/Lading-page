@@ -185,7 +185,7 @@ header nav .right button:hover{
 */
 @media screen and (max-width:640px) { 
     header nav .right p{
-        display: none;     /*masquer les paragraphes*/
+        display: none;     /*masquer les paragraphes..*/
     }
 
     .presentation .product-presentation h1{
