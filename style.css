@@ -177,7 +177,7 @@ header nav .right button:hover{
     color: #ccc;
   }
   footer p:hover {
-    color: white;
+    color: white; /*Ajout de la couleur*/
   }
 
 
