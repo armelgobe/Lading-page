@@ -18,7 +18,7 @@ header{
 
 header nav{ /*Toutes modifications au sein de l'accolade nav s'applique aux items de celle-ci*/
     padding: 30px 5% 0 5%; /*Ajouter une marge à l'extérieur de nav : 30 pixel en haut, 5% à droite, en dessous 0 et à gauche 5%*/
-    display: flex; /*Pour spécifier que notre container nav est un flex */
+    display: flex; /*display flex transpose cad transforme les colonnes en ligne*/
     flex-wrap: wrap; /*Pour spécifier que notre nos éléments vont à la ligne quand il n'y a plus de place. IMPORTANT EN VERSION MOBILE*/
 
     /*Le container nav comporte deux items  à savoir : <h1> et <div class right>*/
@@ -51,15 +51,157 @@ header nav .right p:hover{ /*Spécifier que l'on va utiliser la class hover sur 
 header nav .right button{
     padding: 5px 15px;
     font-size: 16px;
-    background-color: inherit; /*Inherit veut dire appliquer la couleur de base qui est definit dans le body à savoir le blanc*/
+    background-color: inherit; /*Faire en sorte que le boutton herite de la couleur du parent*/
     border: 1px solid var(--violet);
     color: var(--violet);
     border-radius: 5px;
     cursor: pointer;
     transition: color 0.5s, background-color 0.5s;
 }
-header nav .right button:hover{
+header nav .right button:hover{  
     color: inherit;
     background-color: var(--violet);
 
+}
+.presentation {
+    display: flex;
+    padding: 30px 5%;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: space-between;
+    
+
+   
+}
+
+.presentation .product-presentation{
+    width: 100%; /*occupe  le maximum d'espace*/
+    flex-shrink: 3; /*definir comment l'item va reagir en fonction de l'espace qui est disponible dans le container*/
+                    /*Retrecir l'element product presentation du container Presentation si l'element image n'a pas beaucoup de place*/
+}    
+
+.presentation .product-presentation h1{
+    margin: 0;
+    font-size: 4vw; /*Le titre doit etre dimensionné a 4 pourcent de la view width, ceci a cet avantage d'adapter le paragraphe à la taille de l'ecran puisque nous somme en pourcentage*/
+    width: 80%; /*dimensionner notre titre à 80% de l'espace qui lui est reservé*/
+
+}
+
+.presentation .product-presentation p{
+    font-weight: 300; /*On choisis le style de notre police*/
+    color: #e9e9e9;
+}
+.presentation .product-presentation button{
+	padding: 15px 20px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+}
+
+.presentation .image-presentation img{
+    width: 100%;
+}
+
+.first .product-presentation button {
+    background-color: var(--violet);
+    color: white;
+    border: 1px solid var(--violet);
+    transition: background-color 0.5s, color 0.5s;
+    
+}
+
+.first .product-presentation button:hover {
+    background-color: inherit ;
+    color: var(--violet);
+}
+
+
+.first .product-presentation .small-images {
+    margin-top: 30px;
+    display :flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.first .product-presentation .small-images .small {
+    padding: 20px;
+    background-color: #33314d;
+    margin: 0 15px 15px 0;
+    border-radius: 20px;
+    transition: filter 0.5s;
+}
+
+.first .product-presentation .small-images .small:hover {
+    filter: brightness(50%);
+}
+
+.first .product-presentation .small-images .small img{
+    width: 120px;
+
+}
+
+.second {
+    margin: 0;
+    background-color: #13181d;
+  }
+  .second .product-presentation .new {
+    color: var(--violet);
+  }
+  .second .product-presentation button {
+    background-color: inherit;
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    transition: background-color 0.5s, color 0.5s;
+  }
+  .second .product-presentation button:hover {
+    background-color: var(--violet);
+    color: white;
+  }
+
+  footer {
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  footer h3 {
+    color: var(--violet);
+  }
+  footer p {
+    cursor: pointer;
+    color: #ccc;
+  }
+  footer p:hover {
+    color: white;
+  }
+
+
+/*Application des propriétés à nos éléments seulement lorsque la taille est définie 
+*/
+@media screen and (max-width:640px) { 
+    header nav .right p{
+        display: none;     /*masquer les paragraphes*/
+    }
+
+    .presentation .product-presentation h1{
+        font-size: 2em;
+    }
+    .presentation .image-presentation{
+        display: none;
+    }
+    .presentation .product-presentation .small-images .small img {
+        width: 90px;
+    }
+    footer {
+        justify-content: flex-start;
+      }
+      footer .column {
+        width: 80%;
+    }
+    
 }
